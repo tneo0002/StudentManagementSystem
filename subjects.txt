@@ -1,0 +1,10 @@
+Basket Weaving,3
+Social Media,3
+Rocket Science,3
+English,4
+Maths,4
+Finance,4
+Operating Systems,5
+Cyber Security,5
+Systems Design,5
+Programming,6

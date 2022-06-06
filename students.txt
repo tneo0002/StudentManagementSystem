@@ -1,0 +1,7 @@
+David Smith,111,true,Basket Weaving,3,Programming,6,Maths,4
+Andy Cheng,333,true,Programming,6,Operating Systems,5,Maths,4
+Susan Dally,123,false
+Zak Whatever,199,true,Rocket Science,3,Social Media,3,English,4,Basket Weaving,3
+Russell Crowe,222,true,Maths,4
+John Citizen,777,true
+Jane Citizen,555,true,Social Media,3,Rocket Science,3,Systems Design,5
