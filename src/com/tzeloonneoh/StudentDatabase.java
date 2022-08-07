@@ -1,3 +1,5 @@
+package com.tzeloonneoh;
+
 import java.util.*;
 
 /**
@@ -9,7 +11,7 @@ import java.util.*;
 public class StudentDatabase
 {
     private ArrayList<Student> studentDatabase;
-    
+
     /**
      * Construct an empty list of students.
      */
@@ -17,39 +19,39 @@ public class StudentDatabase
     {
         studentDatabase = new ArrayList<>();
     }
-    
+
     /**
      * Add a Student object to a StudentDatabase object to be processed.
-     * 
+     *
      * @param   newStudent  The Student object to be added.
      */
     public void addStudent(Student newStudent)
     {
         studentDatabase.add(newStudent);
     }
-    
+
     /**
      * Given a Student object and an identity number, check if the identity number of the Student
      * object matches the actual parameter of identity number.
-     * 
+     *
      * @param   student The student object, the identity number of which is to be processed.
      * @param   inputIdentityNumber The student identity number to be processed.
-     * @return  true    If the identity number of the Student object and the given identity number 
+     * @return  true    If the identity number of the Student object and the given identity number
      *                  are the same, false otherwise.
      */
     private boolean compareIdentityNumbers(Student student, int inputIdentityNumber)
     {
         return (student.getIdentityNumber() == inputIdentityNumber);
     }
-    
+
     /**
-     * Given an identity number (an integer), compare the identity number with those of the 
-     * Student objects stored in a StudentDatabase object to be processed and return, if 
+     * Given an identity number (an integer), compare the identity number with those of the
+     * Student objects stored in a StudentDatabase object to be processed and return, if
      * there is, a Student object with the same identity number.
-     * 
+     *
      * @param   inputIdentityNumber    The user input of student identity number.
      * @return  The Student object with the same identity numbers the user input.
-     */    
+     */
     public Student filterStudentByIdentityNumber(int inputIdentityNumber)
     {
         Student studentByIdentityNumber = new Student();
@@ -64,11 +66,11 @@ public class StudentDatabase
     }
 
     /**
-     * Given a name (a string of words), compare the name with the names of Student objects 
-     * stored in a StudentDatabase object to be processed and create a new StudentDatabase 
-     * object to store, if any, Student object(s) with the same name, and return the 
+     * Given a name (a string of words), compare the name with the names of Student objects
+     * stored in a StudentDatabase object to be processed and create a new StudentDatabase
+     * object to store, if any, Student object(s) with the same name, and return the
      * StudentDabase object.
-     * 
+     *
      * @param   inputName    The user input of student name.
      * @return  The list of student(s) with the same name as the user input.
      */
@@ -83,13 +85,13 @@ public class StudentDatabase
                 studentsByName.addStudent(student);
         }
         return studentsByName;
-    } 
-    
+    }
+
     /**
-     * Given a SubjectDatabase object, iterator through a StudentDatabase object to be processed, 
-     * store the Student object(s) who has(have) enrolled in all the subjects in the SubjectDatabase 
+     * Given a SubjectDatabase object, iterator through a StudentDatabase object to be processed,
+     * store the Student object(s) who has(have) enrolled in all the subjects in the SubjectDatabase
      * object in a new StudentDatabase object, and return the newly created StudentDatabase object.
-     * 
+     *
      * @return  The list of student(s) enrolled in all the subjects in the given list of subjects.
      */
     public StudentDatabase filterStudentsBySubjects(SubjectDatabase subjectFilters)
@@ -106,11 +108,11 @@ public class StudentDatabase
         }
         return studentsBySubjects;
     }
-    
+
     /**
-     * Given an actual parameter (1: suspended or 2: unsuspended), create a StudentDatabase 
+     * Given an actual parameter (1: suspended or 2: unsuspended), create a StudentDatabase
      * objects to store Student object(s) based on suspension status.
-     * 
+     *
      * @param   integerInput    The user option to list (1: suspended or 2: unsuspended) students.
      * @return  The list of students based on suspension status of user's choice.
      */
@@ -138,7 +140,7 @@ public class StudentDatabase
 
     /**
      * Return the StudentDatabase object containing Student objects not enrolled in any subjects.
-     * 
+     *
      * @return  The list of students who are not at all enrolled in any subjects.
      */
     public StudentDatabase filterStudentsNotEnrolled()
@@ -155,36 +157,36 @@ public class StudentDatabase
         }
         return studentsNotEnrolled;
     }
-    
+
     /**
      * Return the number of Student objects in a StudentDatabase object to be processed.
-     * 
+     *
      * @return  The number of students recorded on the list.
      */
     public int getSize()
     {
         return studentDatabase.size();
     }
-                                                                                                    
+
     /**
      * Given an integer, return a Student object at the (integer)th index in a StudentDatabase
      * object to be processed.
-     * 
+     *
      * @return  The student at the given index on the list.
      */
     public Student getStudent(int index)
     {
         return studentDatabase.get(index);
     }
-    
+
     /**
      * Given an identity number, check if the identity number already exists in a StudentDatabase
      * object to be processed.
-     * 
+     *
      * @param   inputIdentityNumber The student identity number to be processed.
-     * @return  true    If the identity number has already been used for a Student object on the 
+     * @return  true    If the identity number has already been used for a Student object on the
      *                  list, false otherwise.
-     */    
+     */
     public boolean identityNumberInUse(int inputIdentityNumber)
     {
         int index = 0;
@@ -203,15 +205,15 @@ public class StudentDatabase
     }
 
     /**
-     * Compare a check SubjectDatabase object to a main SubjectDatabase object and check if all the 
+     * Compare a check SubjectDatabase object to a main SubjectDatabase object and check if all the
      * Ssubject objects in the check SubjectDatabase object exist in the main SubjectDatabase
      * object.
-     * 
+     *
      * @param   main    The main list of subjects to be compared against.
      * @param   check   The list of subjects to be processed.
-     * @return  true    If the main list contains all the subjects in the check list, false 
+     * @return  true    If the main list contains all the subjects in the check list, false
      *                  otherwise.
-     */    
+     */
     private boolean isSubset(SubjectDatabase main, SubjectDatabase check)
     {
         int index1 = 0;
@@ -224,7 +226,7 @@ public class StudentDatabase
                     break;
             }
             if (index2 == main.getSize())
-                return false;  
+                return false;
         }
         return true;
     }
@@ -233,7 +235,7 @@ public class StudentDatabase
      * Print out all students on the list.
      */
     public void printStudentDatabase()
-    {    
+    {
         int index = 0;
         while (index < studentDatabase.size())
         {
@@ -243,28 +245,28 @@ public class StudentDatabase
         }
         System.out.println("");
     }
-    
+
     /**
      * Remove a Student object from a StudentDatabase object to be processed.
-     * 
+     *
      * @param   newStudent  The Student object to be removed.
      */
     public void removeStudent(Student newStudent)
     {
         studentDatabase.remove(newStudent);
     }
-    
+
     /**
      * Given a student name and an identity number, iterate through a StudentDatabase object to
-     * be processed and check if there is a Student object in the StudentDatabase object that 
+     * be processed and check if there is a Student object in the StudentDatabase object that
      * matches the name and identity number.
-     * 
+     *
      * @param   inputStudentName  The student name against which comparison is to be made.
      * @param   inputIdentityNumber The student identity number against which comparison is to be
      *                              made
-     * @return  true    If a Student object of the same name and identity number is found, false 
+     * @return  true    If a Student object of the same name and identity number is found, false
      *                  otherwise.
-     */    
+     */
     public boolean studentOnDatabase(String inputStudentName, int inputIdentityNumber)
     {
         int index = 0;
@@ -272,8 +274,8 @@ public class StudentDatabase
         while(index < studentDatabase.size() && !found)
         {
             Student existingStudent = studentDatabase.get(index);
-            if (existingStudent.compareStudentNames(inputStudentName) && 
-                compareIdentityNumbers(existingStudent, inputIdentityNumber))
+            if (existingStudent.compareStudentNames(inputStudentName) &&
+                    compareIdentityNumbers(existingStudent, inputIdentityNumber))
             {
                 found = true;
                 return true;
